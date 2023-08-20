@@ -173,4 +173,19 @@ Then, in your container.yml, paste in the value for the AWS_DEFAULT_REGION like 
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: us-east-2
+          AWS_DEFAULT_REGION: ca-central-1
+
+
+# AWS Region with Automatic Invalidation
+In the upcoming lecture, we will be adding automatic invalidation to our Container Workflow (and in a few lectures the Marketing Workflow).
+
+If you are using the suggested shinyinc/action-aws-cli@v1.2 action, you will need to add the AWS Region to the variables associated with the create invalidation run step: 
+
+- run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "/container/latest/index.html"
+  env:
+    AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    AWS_DEFAULT_REGION: ca-central-1
+
+
+Important - Remember to replace us-east-2 with whatever your actual region is.
