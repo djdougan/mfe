@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - 'packages/container/**'
+      - "packages/container/**"
 
 defaults:
   run:
