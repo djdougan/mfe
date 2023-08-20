@@ -1,4 +1,4 @@
-# AWS Setup and Configuration Cheetsheet
+# AWS Setup and Configuration Cheatsheet
 This lecture note is not intended to be a replacement for the videos, but to serve as a cheat sheet for students who want to quickly run thru the AWS configuration steps or easily see if they missed a step. It will also help navigate through the changes to the AWS UI since the course was recorded.
 
 ### S3 Bucket Creation and Configuration
