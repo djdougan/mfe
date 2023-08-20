@@ -2,7 +2,7 @@
 name: deploy-container
 
 on:
-  push:
+  pull_request:
     branches:
       - main
     paths:
