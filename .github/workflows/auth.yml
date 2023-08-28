@@ -26,7 +26,7 @@ jobs:
         env: 
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-
+          AWS_DEFAULT_REGION: 'ca-central-1'
       - run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "/auth/latest/remoteEntry.js"
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: "true"
