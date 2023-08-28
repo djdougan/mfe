@@ -5,9 +5,11 @@ import App from './App';
 
 // Mount function to start up the app
 const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
-  const history = defaultHistory || createMemoryHistory({
-    initialEntries: [initialPath]
-  });
+  const history =
+    defaultHistory ||
+    createMemoryHistory({
+      initialEntries: [initialPath],
+    });
 
   if (onNavigate) {
     history.listen(onNavigate);
@@ -39,4 +41,3 @@ if (process.env.NODE_ENV === 'development') {
 // We are running through container
 // and we should export the mount function
 export { mount };
- 
